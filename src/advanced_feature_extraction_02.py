@@ -171,6 +171,11 @@ class AdvancedFeatureExtractor:
         
         # Tempo and beat tracking
         tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
+        # Handle librosa 0.10+ where tempo is returned as a numpy array
+        if isinstance(tempo, np.ndarray):
+            tempo = float(tempo[0])
+        else:
+            tempo = float(tempo)
         
         # Statistical measures for ZCR and RMS
         features = [

@@ -10,6 +10,7 @@ import os
 import sys
 import argparse
 from pathlib import Path
+import pandas as pd
 
 # Add src directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -103,7 +104,7 @@ def check_dependencies():
     print("🔧 Checking dependencies...")
     
     required_packages = [
-        'numpy', 'pandas', 'librosa', 'scikit-learn', 
+        'numpy', 'pandas', 'librosa', 'sklearn', 
         'matplotlib', 'seaborn', 'tqdm', 'soundfile'
     ]
     
@@ -269,7 +270,6 @@ Processing completed: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}
 """
     
     try:
-        import pandas as pd
         with open('Phase1_Summary.md', 'w') as f:
             f.write(summary)
         print("📋 Phase 1 summary saved to Phase1_Summary.md")

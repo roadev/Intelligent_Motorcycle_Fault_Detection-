@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Datasets and model checkpoints
+data/
+eda/
+models/
+results/
+
+# Summary reports
+Phase1_Summary.md
+
+# OS files
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
